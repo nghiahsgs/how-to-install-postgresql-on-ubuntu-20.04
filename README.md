@@ -29,7 +29,7 @@ psql -U postgres -h localhost
 
 
 
-### create new user
+### create new user (should open postgres dashboard and click create user)
 ```
 sudo -u postgres psql
 CREATE USER nghiahsgs WITH PASSWORD '20101997';
