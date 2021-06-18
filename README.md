@@ -20,6 +20,14 @@ sudo -u postgres psql
 \conninfo
 \q
 ```
+### change password posgtres
+```
+sudo -u postgres psql
+alter user postgres password '261997';
+psql -U postgres -h localhost
+```
+
+
 
 ### create new user
 ```
@@ -47,4 +55,17 @@ sudo /usr/pgadmin4/bin/setup-web.sh
 
 ```
 http://SERVER_IP/pgadmin4
+```
+
+#login
+```
+nghiahsgs@gmail.com
+261997
+```
+
+
+#info server
+```
+user: postgres
+pass: 261997
 ```
