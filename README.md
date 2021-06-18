@@ -69,3 +69,24 @@ nghiahsgs@gmail.com
 user: postgres
 pass: 261997
 ```
+
+## Allow postgresql can connect remotely
+```
+cd /etc/postgresql/12/main
+vi postgresql.conf
+listen_addresses = '*'
+wq
+```
+
+```
+cd /etc/postgresql/12/main
+
+vi pg_hba.conf
+#host    all             all             127.0.0.1/32            md5
+host    all             all             0.0.0.0/0            md5
+wq
+```
+
+```
+sudo service postgresql restart
+```
