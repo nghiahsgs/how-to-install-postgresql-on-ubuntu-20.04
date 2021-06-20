@@ -90,3 +90,19 @@ wq
 ```
 sudo service postgresql restart
 ```
+
+
+## Change encoding of template1
+First, we need to drop template1. Templates can’t be dropped, so we first modify it so t’s an ordinary database:
+```
+UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
+```
+Now we can drop it:
+```
+DROP DATABASE template1;
+```
+
+Now its time to create database from template0, with a new default encoding:
+```
+CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING = 'UNICODE';
+```
